@@ -21,8 +21,16 @@
     ],
     "icon": "images/icon.png",
     "galleryBanner": {
-        "color": "#0000FF",
+        "color": "#EEEEEE",
         "theme": "light"
+    },
+    "homepage": "https://github.com/andrew-lis/Workbench",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andrew-lis/Workbench.git"
+    },
+    "bugs": {
+        "url": "https://github.com/andrew-lis/Workbench/issues"
     },
     "main": "./out/src/extension",
     "activationEvents": [
