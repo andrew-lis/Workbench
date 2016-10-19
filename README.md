@@ -10,11 +10,11 @@ made better!
 
 ## Usage
 
-Add files from a actions prompt or tab context menu.
+Mark a file as favorite from the Command Palette or editor’s Title Menu.
 
-![adding a file from context menu](images/showAddingFromContext.gif)
+![adding a file from title menu](images/showAddingFromContext.gif)
 
-Browse favorite files with a `ALT+Q` shortcut (filter by alias):
+Browse favorite files with a `Alt+Q` shortcut (type to filter by alias):
 
 ![browsing files](images/showBrowsingFiles.gif)
 
@@ -25,8 +25,9 @@ Browse favorite files with a `ALT+Q` shortcut (filter by alias):
   * Duplicates are rejected
 * Listing files from a workbench (i.e. browsing favorites)
   * Command: `Workbench: List Files`
-  * Shortcut: `ALT + Q` (works in the editor and on explorer)
+  * Shortcut: `Alt+Q` (works in the editor and on explorer)
   * An alias is created with a prefix number
+  * The list is sorted by alias
 * Removing an opened file from the workbench (command: `Workbench: Remove Current File`)
 * Removing chosen file from the workbench (command: `Workbench: Remove Chosen File`)
 * Removing all files (i.e. clearing the workbench) (command: `Workbench: Clear All Files`)
@@ -54,6 +55,6 @@ from a command.
 
 ## Release Notes
 
-### 1.0.0 (2016.10.14)
+### 0.0.2 (2016.10.14)
 
 Initial release.

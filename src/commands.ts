@@ -34,7 +34,11 @@ export function onCommandAddFile() {
         vscode.window.activeTextEditor.document.uri.fsPath);
 
     if (currentWorkbench.findByPath(file) === null) {
-        let alias = `${currentWorkbench.count()} ${path.basename(file)}`;
+        let prefixNumber = currentWorkbench.count() + 1;
+        let prefixPad = (prefixNumber < 10 ? " " : "");
+
+        let alias = `${prefixPad}${prefixNumber} ${path.basename(file)}`;
+
         currentWorkbench.addFile(new model.File(file, alias));
 
         vscode.window.setStatusBarMessage(`Workbench: new file added: ${file}`);

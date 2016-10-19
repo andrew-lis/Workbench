@@ -66,7 +66,7 @@ export class Workbench {
     }
 
     public count = (): number => {
-        return (this.files.length + 1);
+        return this.files.length;
     }
 
     public addFile = (file: File) => {
