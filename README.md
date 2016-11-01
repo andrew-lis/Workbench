@@ -55,6 +55,11 @@ from a command.
 
 ## Release Notes
 
+### 0.1.0 (2016.11.01)
+
+* Removed "preview" flag from marketplace configuration
+* Better numbering for aliases with numbers above nine
+
 ### 0.0.2 (2016.10.14)
 
 Initial release.

@@ -1,9 +1,9 @@
 {
-    "preview": true,
+    "preview": false,
     "name": "workbench",
     "displayName": "Workbench",
     "description": "Group favorite files into a workbench.",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "publisher": "andrew-lis",
     "license": "MIT",
     "engines": {
