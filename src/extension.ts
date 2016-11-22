@@ -5,11 +5,12 @@ import * as vscode from "vscode";
 import * as model from "./model";
 import * as commands from "./commands";
 
-const version = "0.0.2";
+const version = "0.1.1";
 
 const supportedCommands = {
     "workbench.addFile": commands.onCommandAddFile,
     "workbench.listFiles": commands.onCommandListFiles,
+    "workbench.openAll": commands.onCommandOpenAll,
     "workbench.removeFile": commands.onCommandRemoveFile,
     "workbench.removeCurrentFile": commands.onCommandRemoveCurrentFile,
     "workbench.clearFiles": commands.onCommandClearFiles

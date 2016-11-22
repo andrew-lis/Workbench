@@ -95,6 +95,10 @@ export class Workbench {
         return this.files.find((f) => f.alias === alias);
     }
 
+    public getAll = (): File[] => {
+        return this.files.slice();
+    }
+
     public getAliases = (): string[] => {
         return this.files.map((f) => f.alias).sort();
     }

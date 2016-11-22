@@ -28,6 +28,8 @@ Browse favorite files with a `Alt+Q` shortcut (type to filter by alias):
   * Shortcut: `Alt+Q` (works in the editor and on explorer)
   * An alias is created with a prefix number
   * The list is sorted by alias
+* Open all favorite files
+  * Command: `Workbench: Open All Files`
 * Removing an opened file from the workbench (command: `Workbench: Remove Current File`)
 * Removing chosen file from the workbench (command: `Workbench: Remove Chosen File`)
 * Removing all files (i.e. clearing the workbench) (command: `Workbench: Clear All Files`)
@@ -54,6 +56,10 @@ reset the vscode. There are features on the roadmap to enable automatic reloads 
 from a command.
 
 ## Release Notes
+
+### 0.1.1 (2016.11.22)
+
+* Command to open all favorite files (#1)
 
 ### 0.1.0 (2016.11.01)
 

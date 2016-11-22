@@ -28,6 +28,21 @@ export async function onCommandListFiles() {
     }
 } 
 
+export async function onCommandOpenAll() {
+    let currentWorkbench = model.project.currentWorkbench;
+
+    if (currentWorkbench.isEmpty()) {
+        vscode.window.showWarningMessage("Workbench: No files available");
+        return;
+    }
+
+    currentWorkbench.getAll().forEach(async file => {
+        let document = await vscode.workspace.openTextDocument(file.getAbsolutePath());
+        
+        vscode.window.showTextDocument(document, null, false);
+    });
+} 
+
 export function onCommandAddFile() {
     let currentWorkbench = model.project.currentWorkbench;
     let file = vscode.workspace.asRelativePath(
