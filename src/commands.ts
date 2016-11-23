@@ -45,8 +45,11 @@ export async function onCommandOpenAll() {
 
 export function onCommandAddFile() {
     let currentWorkbench = model.project.currentWorkbench;
-    let file = vscode.workspace.asRelativePath(
-        vscode.window.activeTextEditor.document.uri.fsPath);
+    let file = getActiveEditorFilePath();
+
+    if (!file) {
+        return;
+    }
 
     if (currentWorkbench.findByPath(file) === null) {
         let prefixNumber = currentWorkbench.count() + 1;
@@ -91,8 +94,12 @@ export function onCommandRemoveCurrentFile() {
         vscode.window.showWarningMessage("Workbench: No files available");
     }
 
-    let file = vscode.workspace.asRelativePath(
-        vscode.window.activeTextEditor.document.uri.fsPath);
+    let file = getActiveEditorFilePath();
+
+    if (!file) {
+        return;
+    }
+
     let fileToRemove = currentWorkbench.findByPath(file);
 
     if (fileToRemove) {
@@ -112,4 +119,14 @@ export async function onCommandClearFiles() {
 
         vscode.window.setStatusBarMessage("Workbench: all files removed"); 
     }
+}
+
+function getActiveEditorFilePath(): string {
+    if (!vscode.window.activeTextEditor) {
+        vscode.window.showWarningMessage("Workbench: No file is open");
+        return null;
+    }
+
+    return vscode.workspace.asRelativePath(
+        vscode.window.activeTextEditor.document.uri.fsPath);
 }

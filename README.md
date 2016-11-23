@@ -54,18 +54,3 @@ Browse favorite files with a `Alt+Q` shortcut (type to filter by alias):
 editing the `workbench.json` file. But the file is not reloaded. The workaround is to 
 reset the vscode. There are features on the roadmap to enable automatic reloads and allow alias editing 
 from a command.
-
-## Release Notes
-
-### 0.1.1 (2016.11.22)
-
-* Command to open all favorite files (#1)
-
-### 0.1.0 (2016.11.01)
-
-* Removed "preview" flag from marketplace configuration
-* Better numbering for aliases with numbers above nine
-
-### 0.0.2 (2016.10.14)
-
-Initial release.
