@@ -1,3 +1,8 @@
+## 0.1.3 (2016.12.06)
+
+* New command: `Workbench: Open Config`
+* New command: `Workbench: Reload Config`
+
 ## 0.1.2 (2016.11.24)
 
 * Bugfix - trying to add a file to favorites when no file is open gives a warning

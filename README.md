@@ -18,6 +18,12 @@ Browse favorite files with a `Alt+Q` shortcut (type to filter by alias):
 
 ![browsing files](images/showBrowsingFiles.gif)
 
+To rename an alias of a favorite file:
+
+* Open the config file (command: `Workbench: Open Config`)
+* Edit the alias manually
+* Reload the config file (command: `Workbench: Reload Config`)
+
 ## Features
 
 * Adding a file to the workbench (command: `Workbench: Add File`)
@@ -34,8 +40,13 @@ Browse favorite files with a `Alt+Q` shortcut (type to filter by alias):
 * Removing chosen file from the workbench (command: `Workbench: Remove Chosen File`)
 * Removing all files (i.e. clearing the workbench) (command: `Workbench: Clear All Files`)
   * With confirmation dialog
-* Data are stored as an easily accessible JSON file
+* Data are stored as an easily accessible JSON file (config)
   * Location: `./.vscode/workbench.json`
+* Reloading the config file
+  * Command: `Workbench: Reload Config`
+* Opening the config file for edit
+  * Command: `Workbench: Open Config`
+  * File is not reloaded automatically, use `Workbench: Reload Config` command
 
 ## Development Notes
 
@@ -50,7 +61,6 @@ Browse favorite files with a `Alt+Q` shortcut (type to filter by alias):
 
 ## Known Issues
 
-* *Editing an alias requires also resetting the VSCode.* File aliases can be renamed to anything by 
-editing the `workbench.json` file. But the file is not reloaded. The workaround is to 
-reset the vscode. There are features on the roadmap to enable automatic reloads and allow alias editing 
-from a command.
+* *Editing an alias requires triggering a config reload* File aliases can be renamed to anything by 
+editing the `workbench.json` file and invoking `Workbench: Reload Config`. 
+There are features on the roadmap to enable automatic reloads and allow alias editing from a command.

@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 import * as model from "./model";
 import * as commands from "./commands";
 
-const version = "0.1.2";
+const version = "0.1.3";
 
 const supportedCommands = {
     "workbench.addFile": commands.onCommandAddFile,
@@ -13,7 +13,9 @@ const supportedCommands = {
     "workbench.openAll": commands.onCommandOpenAll,
     "workbench.removeFile": commands.onCommandRemoveFile,
     "workbench.removeCurrentFile": commands.onCommandRemoveCurrentFile,
-    "workbench.clearFiles": commands.onCommandClearFiles
+    "workbench.clearFiles": commands.onCommandClearFiles,
+    "workbench.openConfig": commands.onOpenConfig,
+    "workbench.reloadConfig": commands.onReloadConfig,
 };
 
 export function activate(context: vscode.ExtensionContext) {

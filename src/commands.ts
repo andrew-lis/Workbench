@@ -121,6 +121,18 @@ export async function onCommandClearFiles() {
     }
 }
 
+export async function onOpenConfig() {
+    model.project.save();
+
+    let document = await vscode.workspace.openTextDocument(model.getDbFilePath());
+
+    vscode.window.showTextDocument(document, null, false);
+}
+
+export async function onReloadConfig() {
+    model.project.load();
+}
+
 function getActiveEditorFilePath(): string {
     if (!vscode.window.activeTextEditor) {
         vscode.window.showWarningMessage("Workbench: No file is open");

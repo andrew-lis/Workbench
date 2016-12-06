@@ -125,7 +125,7 @@ export function init() {
     project.load();
 }
 
-function getDbFilePath(): string {
+export function getDbFilePath(): string {
     return path.join(vscode.workspace.rootPath, DB_FILE);
 }
 
