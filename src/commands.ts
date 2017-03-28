@@ -122,9 +122,15 @@ export async function onCommandClearFiles() {
 }
 
 export async function onOpenConfig() {
+    let dbFilePath = model.getDbFilePath();
+
+    if (!dbFilePath) {
+        return;
+    }
+
     model.project.save();
 
-    let document = await vscode.workspace.openTextDocument(model.getDbFilePath());
+    let document = await vscode.workspace.openTextDocument(dbFilePath);
 
     vscode.window.showTextDocument(document, null, false);
 }

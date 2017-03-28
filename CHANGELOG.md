@@ -1,3 +1,7 @@
+## 0.1.4 (2017.03.28)
+
+* Bugfix - trying to list favourite files when no folder is open gives an error
+
 ## 0.1.3 (2016.12.06)
 
 * New command: `Workbench: Open Config`

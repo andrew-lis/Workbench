@@ -30,8 +30,14 @@ export class Project {
     }
 
     public save = () => {
+        let dbFilePath = getDbFilePath();
+
+        if (!dbFilePath) {
+            return;
+        }
+
         try {
-            fs.accessSync(getDbFilePath(), fs.constants.R_OK | fs.constants.W_OK);
+            fs.accessSync(dbFilePath, fs.constants.R_OK | fs.constants.W_OK);
         } catch (e) {
             console.log("Workbench: file doesn't exist, creating dir...");
 
@@ -41,7 +47,7 @@ export class Project {
             }
         }
 
-        fs.writeFileSync(getDbFilePath(), JSON.stringify(this, null, "\t"));
+        fs.writeFileSync(dbFilePath, JSON.stringify(this, null, "\t"));
     }
 }
 
@@ -126,6 +132,9 @@ export function init() {
 }
 
 export function getDbFilePath(): string {
+    if (!vscode.workspace.rootPath) {
+        return;
+    }
     return path.join(vscode.workspace.rootPath, DB_FILE);
 }
 

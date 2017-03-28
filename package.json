@@ -3,7 +3,7 @@
     "name": "workbench",
     "displayName": "Workbench",
     "description": "Group favorite files into a workbench.",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "publisher": "andrew-lis",
     "license": "MIT",
     "engines": {
@@ -13,10 +13,10 @@
         "Other"
     ],
     "keywords": [
-        "workbench",
         "favorite",
-        "files",
         "project",
+        "todo",
+        "organise",
         "bookmarks"
     ],
     "icon": "images/icon.png",
