@@ -51,11 +51,20 @@ export function onCommandAddFile() {
         return;
     }
 
+    let prefixWithDir = getConfigurationPrefixAliasWithDirName();
+
     if (currentWorkbench.findByPath(file) === null) {
         let prefixNumber = currentWorkbench.count() + 1;
         let prefixPad = (prefixNumber < 10 ? " " : "");
+        let parentDirName = "";
 
-        let alias = `${prefixPad}${prefixNumber} ${path.basename(file)}`;
+        if (prefixWithDir) {
+            let fullPath = vscode.window.activeTextEditor.document.uri.fsPath;
+            parentDirName = path.dirname(fullPath).split(path.sep).pop() + "/";
+        }
+
+        let filename = path.basename(file);
+        let alias = `${prefixPad}${prefixNumber} ${parentDirName}${filename}`;
 
         currentWorkbench.addFile(new model.File(file, alias));
 
@@ -147,4 +156,9 @@ function getActiveEditorFilePath(): string {
 
     return vscode.workspace.asRelativePath(
         vscode.window.activeTextEditor.document.uri.fsPath);
+}
+
+function getConfigurationPrefixAliasWithDirName(): boolean {
+    let configuration = vscode.workspace.getConfiguration('foxWorkbench');
+    return configuration['prefixAliasWithDirName'];
 }

@@ -1,3 +1,7 @@
+## 0.1.5 (2017.03.29)
+
+* (Per feature request #2) Extending favourite file alias with a directory name. Can be disabled with configuration entry `foxWorkbench.prefixAliasWithDirName`
+
 ## 0.1.4 (2017.03.28)
 
 * Bugfix - trying to list favourite files when no folder is open gives an error

@@ -29,6 +29,7 @@ To rename an alias of a favorite file:
 * Adding a file to the workbench (command: `Workbench: Add File`)
   * As a relative path
   * Duplicates are rejected
+  * Parent directory name used as prefix (can be disabled through configuration `foxWorkbench.prefixAliasWithDirName`)
 * Listing files from a workbench (i.e. browsing favorites)
   * Command: `Workbench: List Files`
   * Shortcut: `Alt+Q` (works in the editor and on explorer)

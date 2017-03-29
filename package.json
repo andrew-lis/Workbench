@@ -3,7 +3,7 @@
     "name": "workbench",
     "displayName": "Workbench",
     "description": "Group favorite files into a workbench.",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "publisher": "andrew-lis",
     "license": "MIT",
     "engines": {
@@ -98,7 +98,18 @@
                 "mac": "alt+q",
                 "when": ""
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Fox's Workbench configuration",
+            "properties": {
+                "foxWorkbench.prefixAliasWithDirName": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Prefix file alias with parent directory name."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
