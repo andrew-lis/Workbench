@@ -1,3 +1,7 @@
+## 0.1.6 (2017.05.06)
+
+* Adjusting code to a sudden bug in VSCode (ignoring default `viewColumn` in `showTextDocument()` )
+
 ## 0.1.5 (2017.03.29)
 
 * (Per feature request #2) Extending favourite file alias with a directory name. Can be disabled with configuration entry `foxWorkbench.prefixAliasWithDirName`

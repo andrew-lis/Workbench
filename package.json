@@ -3,7 +3,7 @@
     "name": "workbench",
     "displayName": "Workbench",
     "description": "Group favorite files into a workbench.",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "publisher": "andrew-lis",
     "license": "MIT",
     "engines": {

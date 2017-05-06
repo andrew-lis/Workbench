@@ -24,7 +24,7 @@ export async function onCommandListFiles() {
 
         let document = await vscode.workspace.openTextDocument(fileToOpen.getAbsolutePath());
         
-        vscode.window.showTextDocument(document, null, false);
+        showDocument(document);
     }
 } 
 
@@ -39,7 +39,7 @@ export async function onCommandOpenAll() {
     currentWorkbench.getAll().forEach(async file => {
         let document = await vscode.workspace.openTextDocument(file.getAbsolutePath());
         
-        vscode.window.showTextDocument(document, null, false);
+        showDocument(document);
     });
 } 
 
@@ -141,7 +141,7 @@ export async function onOpenConfig() {
 
     let document = await vscode.workspace.openTextDocument(dbFilePath);
 
-    vscode.window.showTextDocument(document, null, false);
+    showDocument(document);
 }
 
 export async function onReloadConfig() {
@@ -156,6 +156,14 @@ function getActiveEditorFilePath(): string {
 
     return vscode.workspace.asRelativePath(
         vscode.window.activeTextEditor.document.uri.fsPath);
+}
+
+function showDocument(document: vscode.TextDocument): void {
+    let viewColumn: vscode.ViewColumn = (vscode.window.activeTextEditor && vscode.window.activeTextEditor.viewColumn
+        ? vscode.window.activeTextEditor.viewColumn
+        : vscode.ViewColumn.One);
+
+    vscode.window.showTextDocument(document, viewColumn, false);
 }
 
 function getConfigurationPrefixAliasWithDirName(): boolean {

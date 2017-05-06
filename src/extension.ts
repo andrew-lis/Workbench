@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 import * as model from "./model";
 import * as commands from "./commands";
 
-const version = "0.1.5";
+const version = "0.1.6";
 
 const supportedCommands = {
     "workbench.addFile": commands.onCommandAddFile,
