@@ -120,6 +120,8 @@ export class File {
     }
 
     public getAbsolutePath = (): string => {
+        if (this.path.startsWith('/') || this.path.startsWith('~'))
+            return this.path;
         return path.join(vscode.workspace.rootPath, this.path);
     }
 }
