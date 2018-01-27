@@ -1,3 +1,7 @@
+## 0.1.7 (2018.01.27)
+
+* Allowing absotute paths in the config
+
 ## 0.1.6 (2017.05.06)
 
 * Adjusting code to a sudden bug in VSCode (ignoring default `viewColumn` in `showTextDocument()` )
