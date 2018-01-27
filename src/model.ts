@@ -120,7 +120,11 @@ export class File {
     }
 
     public getAbsolutePath = (): string => {
-        return path.join(vscode.workspace.rootPath, this.path);
+        if (path.isAbsolute(this.path)) {
+            return this.path;
+        } else { 
+            return path.join(vscode.workspace.rootPath, this.path);
+        }
     }
 }
 
